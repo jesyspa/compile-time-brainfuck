@@ -1,7 +1,6 @@
 #include "ctbf.hpp"
 
 // Inspired by this answer: http://stackoverflow.com/a/14589567/559931
-// Requires a drop of C++11 to be impressive.
 
 template<typename T>
 struct is_tail {
@@ -21,7 +20,9 @@ struct fuck_you {
 template<>
 struct fuck_you<true> {
     template<int>
-    using magic = int;
+    struct magic {
+        magic(int) {}
+    };
 };
 
 int main() {
